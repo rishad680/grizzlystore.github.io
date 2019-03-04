@@ -1,0 +1,9 @@
+--> create database grizzly_store;
+
+--> create table login(username varchar(30),password varchar(30),user_type varchar(15),attempt int(1));
+
+--> create table product_brand(br_id int(10) primary key auto_increment,br_name varchar(50));
+
+--> create table product_category(ct_id int(10) primary key auto_increment,ct_name varchar(50));
+
+--> create table product(pr_id int(10) primary key auto_increment,pr_name varchar(20),pr_description text,pr_price double,pr_rating double,pr_availability int(20),pr_br_fk int(10),pr_ct_fk int(10),foreign key(pr_br_fk) references product_brand(br_id),foreign key(pr_ct_fk) references product_category(ct_id));
